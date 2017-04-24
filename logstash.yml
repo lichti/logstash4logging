@@ -1,1 +1,5 @@
 http.host: "0.0.0.0"
+xpack.monitoring.enabled: false
+xpack.watcher.enabled: false
+xpack.reporting.enabled: false
+xpack.graph.enabled: false
