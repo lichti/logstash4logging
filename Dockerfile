@@ -11,7 +11,7 @@ ADD logstash.yml /usr/share/logstash/config/
 ADD docker-entrypoint /usr/local/bin/
 RUN chmod 0755 /usr/local/bin/docker-entrypoint
 
-USER logstash
+#USER logstash
 
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
 CMD ["-f", "/usr/share/logstash/pipeline/"]
