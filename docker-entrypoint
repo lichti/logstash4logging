@@ -12,6 +12,9 @@ sed -i "s|{{API_SECRET}}|${API_SECRET:-''}|g" /usr/share/logstash/pipeline/logst
 sed -i "s|{{LOG_FILE}}|${LOG_FILE:-'app.log'}|g" /usr/share/logstash/pipeline/logstash.conf
 sed -i "s|{{LOG_SINCEDB_INTERVAL}}|${LOG_SINCEDB_INTERVAL:-5}|g" /usr/share/logstash/pipeline/logstash.conf
 
+touch /log/logstash.sincedb
+chmod 666 /log/logstash.sincedb
+
 if [[ ${1:0:1} == '-' ]]; then
   exec logstash $@
 else
